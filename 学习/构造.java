@@ -1,4 +1,6 @@
 public class 构造{
+			this.x = x;
+			this.y = y;
 	public static void main(String[] args){
 		
 	}
