@@ -12,3 +12,16 @@ public class HelloWorld{
 	
 ```
 Applet(小应用程序)  
+
+#### 静态导入
+```java
+import static java.lang.System.*;
+
+{
+out.println("Hi!");//System.out
+exit(0);//System.exit
+
+}
+```
+
+
