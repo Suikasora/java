@@ -1,40 +1,67 @@
-public class Main1{
-	public static void main(String[] args){
-		Ring r = new Ring(5,4);
-		System.out.println(r.area());
-		
-	}
+public class Main1 {
+  public static void main (String[] args) {
+    Ring ring1 = new Ring (5, 8, "red");
+    System.out.println ("圆环的内半径：" + ring1.getInnerRadius() );
+    System.out.println ("圆环的外半径：" + ring1.getOuterRadius() );
+    System.out.println ("圆环的颜色：" + ring1.getColor() );
+    System.out.println ("圆环的面积：" + ring1.getArea() );
+    Ring ring2 = new Ring (5, 8, "red");
+    ring2.setInnerRadius (6);
+    ring2.setOuterRadius (10);
+    ring2.setColor ("blue");
+    System.out.println ("圆环的内半径：" + ring2.getInnerRadius() );
+    System.out.println ("圆环的外半径：" + ring2.getOuterRadius() );
+    System.out.println ("圆环的颜色：" + ring2.getColor() );
+    System.out.println ("圆环的面积：" + ring2.getArea() );
+    System.out.println ("圆环的个数：" + ring2.getNum() );
+  }
 }
+
 class Ring {
-	double innerRadius;
-	double outerRadius;
-	String color;
-	public Ring(double innerRadius,double outerRadius){
-		this.innerRadius = innerRadius;
-		this.outerRadius = outerRadius;
-	}
-	double area(){
-		return Math.PI * (Math.pow(outerRadius,2) - Math.pow(innerRadius,2));
-	}
-}
+  private double innerRadius;
+  private double outerRadius;
+  public String color;
+  public static double PI = 3.1415926;
+  public static int num = 0;
 
-
-public class Circle extends Shape{
-	Circle(double dim){
-	}
-}
-
-//所有的方法只有签名没有方法体
-//public static final 默认的变量
-//public abstract 默认的方法
-
-public interface Multi{
-	public static final double PI = 1;
-	public void callArea();
-}
-
-//接口的使用
-public class Myclass implements MyInterface{
-
-
+  public Ring (double iRadius, double oRadius, String c) {
+    this.innerRadius = iRadius;
+    this.outerRadius = oRadius;
+    this.color = c;
+    num++;
+  }
+  public double getInnerRadius() {
+    return innerRadius;
+  }
+  public void setInnerRadius (double innerRadius) {
+    this.innerRadius = innerRadius;
+  }
+  public double getOuterRadius() {
+    return outerRadius;
+  }
+  public void setOuterRadius (double outerRadius) {
+    this.outerRadius = outerRadius ;
+  }
+  public String getColor() {
+    return color;
+  }
+  public void setColor (String color) {
+    this.color = color;
+  }
+  public double getArea() {
+    return PI * (getOuterRadius() * getOuterRadius() - getInnerRadius() * getInnerRadius() );
+  }
+  public double getInCircle() {
+    return 2 * PI * getInnerRadius();
+  }
+  public double getOutCircle() {
+    return 2 * PI * getOuterRadius();
+  }
+  //static
+  public static void setPI (double pi) {
+    PI = pi;
+  }
+  public static int getNum() {
+    return num;
+  }
 }
