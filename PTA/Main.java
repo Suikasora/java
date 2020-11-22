@@ -1,28 +1,22 @@
-import javax.swing.JOptionPane;
 import java.util.*;
 public class Main {
-
-  private String reorder (String str) {
-    public reorder (String str) {
-      StringBuffer stringBuffer = new StringBuffer (str);
-      return stringBuffer.reverse();
-    }
-  }
   public static void main (String[] args) {
     Scanner sc = new Scanner (System.in);
-    System.out.println (reorder (sc.nextLine() ) );
+    int a, b;
+    try {
+      a = sc.nextInt();
+      b = sc.nextInt();
+      System.out.println ( (b % a) );
+    } catch (InputMismatchException e1) {
+      System.out.println ("请输入整型数！ ");
+    } catch (NumberFormatException e2) {
+      System.out.println ("请输入整型数！ ");
+    } catch (ArithmeticException e3) {
+      System.out.println ("除数不可为0！");
+    }
+    finally{
+      System.out.println ("总会被执行！");
+    }
   }
 }
 
-import javax.swing.JOptionPane;
-public class ReverseString {
-  public static void reverseString (String str) {
-    StringBuffer stringBuffer = new StringBuffer (str);
-    System.out.print (stringBuffer.reverse() );
-  }
-  public static void main (String args[]) {
-    String originalString;
-    originalString = JOptionPane.showInputDialog ( "Please input a String: " );
-    reverseString (originalString);
-  }
-}
