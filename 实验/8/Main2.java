@@ -1,5 +1,5 @@
 import java.util.LinkedList;
-public class Main2{
+public class Main2 {
   public static void main (String[] args) {
     Storage s = new Storage();
     Printer printer = new Printer ("读数", s);
@@ -12,7 +12,7 @@ class Storage {
   private int num;
   public Storage() {
   }
-  public void Storage (int num) {
+  public Storage (int num) {
     this.num = num;
   }
   public  void setNum (int num) {
