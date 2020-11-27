@@ -59,7 +59,7 @@ class Printer extends Thread {
     }
   }
 }
-public class Main2{
+public class Main2 {
   public static void main (String[] args) {
     Storage s = new Storage();
     Counter coun = new Counter ("Counter", s);
